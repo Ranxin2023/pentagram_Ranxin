@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# python cache
+__pycache__
+modal_env
+
+public/images
