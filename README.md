@@ -136,7 +136,6 @@ Make sure to set up the following variables in your .env file:
 - Description: Accepts a text prompt and returns the URL of the generated image.
 - Payload:
 ```json
-Copy code
 {
   "text": "A futuristic cityscape with flying cars at sunset"
 }
