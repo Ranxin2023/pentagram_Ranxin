@@ -4,6 +4,7 @@
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup](#setup)
+- [Learn More](#learn-more)
 - [Usage](#usage)
 - [Project Structure](#Project-structure)
 - [Environment Variables](#environment-variables)
@@ -14,20 +15,20 @@
 Pentagram Image Generator is an AI-powered web application that transforms your imagination into stunning visuals. By leveraging the powerful Stable Diffusion model, users can input text descriptions to generate highly realistic images in just seconds. This project integrates cutting-edge technologies like Next.js for the frontend, a Modal-based backend for running the AI model, and seamless local image storage to deliver a smooth and user-friendly experience.
 
 Whether you're an artist seeking inspiration, a developer exploring the capabilities of AI, or simply someone curious about the power of text-to-image generation, this project is built to spark creativity and showcase the future of artificial intelligence.
+
 ## Features
 - Accepts text prompts and generates images using AI.
 - Stores generated images locally in the file system.
 - Displays the generated images on the webpage.
 - Handles user input validation and error management.
 
-## Tech Used
+## Tech Stack
 - **Frontend:** React, Next.js, Tailwind CSS
 - **Backend:** Node.js, Express
 - **AI Model:** Stable Diffusion (via Modal)
 - **Dependencies:** FastAPI, PyTorch, Diffusers, @vercel/blob
 
-## Getting Started
-
+## Setup
 1. Clone the GitHub repository:
 
 ```bash
@@ -59,7 +60,20 @@ modal deploy generate_modal.py
 ```
 
 5. Register the api key in modal:
+To secure the connection between the frontend and backend, you need to register an API key in Modal:
+- Log in to the Modal dashboard using your registered account: Go to [Modal Dashboard](https://modal.com/login)
+- Navigate to the `Secrets` section of your deployed Modal application.
+- Create a new secret by following these steps:
+    - Click Create Secret.
+    - Provide a name, such as IMAGE_API_KEY.
+    - Add your generated API key or token (specific to your application or environment) as the value.
+    - Save the secret.
+- Update your project to use the secret:
 
+    - Add the secret to the modal.Secret.from_name line in your generate_modal.py file. For example:
+    ```sh
+    @app.cls(image=image, gpu="T4", secrets=[modal.Secret.from_name("IMAGE_API_KEY")])
+    ```
 6. Run the development server:
 
 ```sh
@@ -78,10 +92,12 @@ npm run dev
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the concepts, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Modal Docuentation](https://modal.com/docs/examples/hello_world) - learn about modals
+- [Nvidia GPUs](https://www.digitalocean.com/community/tutorials/h100_vs_other_gpus_choosing_the_right_gpu_for_your_machine_learning_workload) -learn more about GPUs
 
 ## Usage
 - Visit http://localhost:3000 in your browser.
