@@ -9,7 +9,7 @@
 - [Project Structure](#Project-structure)
 - [Environment Variables](#environment-variables)
 - [API Routes](#api-routes)
-- [Acknowledgements](#acknowledgements)
+
 
 ## Introduction
 Pentagram Image Generator is an AI-powered web application that transforms your imagination into stunning visuals. By leveraging the powerful Stable Diffusion model, users can input text descriptions to generate highly realistic images in just seconds. This project integrates cutting-edge technologies like Next.js for the frontend, a Modal-based backend for running the AI model, and seamless local image storage to deliver a smooth and user-friendly experience.
@@ -122,4 +122,22 @@ To learn more about the concepts, take a look at the following resources:
 ├── package.json
 ├── README.md
 
+```
+## Environment Variables
+Make sure to set up the following variables in your .env file:
+
+
+`IMAGE_API_KEY`:API key for the image generation API
+`IMAGE_API_URL`: API URL for image generation
+
+## API Routes
+`/api/generate-image`
+- Method: POST
+- Description: Accepts a text prompt and returns the URL of the generated image.
+- Payload:
+```json
+Copy code
+{
+  "text": "A futuristic cityscape with flying cars at sunset"
+}
 ```
