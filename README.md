@@ -10,41 +10,50 @@
 - [API Routes](#api-routes)
 - [Acknowledgements](#acknowledgements)
 
+## Introduction
+Pentagram Image Generator is an AI-powered web application that transforms your imagination into stunning visuals. By leveraging the powerful Stable Diffusion model, users can input text descriptions to generate highly realistic images in just seconds. This project integrates cutting-edge technologies like Next.js for the frontend, a Modal-based backend for running the AI model, and seamless local image storage to deliver a smooth and user-friendly experience.
 
+Whether you're an artist seeking inspiration, a developer exploring the capabilities of AI, or simply someone curious about the power of text-to-image generation, this project is built to spark creativity and showcase the future of artificial intelligence.
 ## Features
 - Accepts text prompts and generates images using AI.
 - Stores generated images locally in the file system.
 - Displays the generated images on the webpage.
 - Handles user input validation and error management.
 
+## Tech Used
+- **Frontend:** React, Next.js, Tailwind CSS
+- **Backend:** Node.js, Express
+- **AI Model:** Stable Diffusion (via Modal)
+- **Dependencies:** FastAPI, PyTorch, Diffusers, @vercel/blob
 
 ## Getting Started
 
-First, clone the GitHub repository:
+1. Clone the GitHub repository:
 
 ```bash
 git clone https://github.com/team-headstart/pentagram.git
 ```
 
-Then, navigate to the project directory:
+2. navigate to the project directory:
 
 ```bash
 cd pentagram
 ```
 
-Then, install the dependencies:
+3. install the dependencies:
 
 ```bash
 npm install
 ```
-
-Run the development server:
+4. Register for Modal
+5. Run the modal code to generate modals
+6. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Tasks
 
@@ -77,7 +86,7 @@ To learn more about Next.js, take a look at the following resources:
 │   │   │   ├── generate-image/
 │   │   │   │   ├── route.ts
 │   │   │   │   ├── generate_image.ts
-│   │   │   │   ├── utils/
+│   │   │   │   ├── python_modals/
 │   │   │   │   │   ├── generate_modal.py
 │   ├── pages/
 │   │   ├── index.tsx
