@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { generateImage } from "./api/generate-image/generate_image";
+// import { generateImage } from "./api/generate-image/generate_image";
+require('dotenv').config();
 
 export default function Home() {
   const [inputText, setInputText] = useState("");
@@ -12,8 +13,9 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-      const result=await generateImage(inputText)
-      const response = await fetch("http://localhost:3000/api/generate-image", {
+      // const result=await generateImage(inputText)
+      const image_api_url=process.env.IMAGE_API_URL || "http://localhost:3000/api/generate-image"
+      const response = await fetch(image_api_url!, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,12 +28,12 @@ export default function Home() {
       if(!data.success){
         throw new Error("fail to fetch the image")
       }
-      console.log("Image URL:", data.imageURL); // Debugging step
+      // console.log("Image URL:", data.imageURL); // Debugging step
       const dataImgURL=data.imageURL as string
-      console.log("Image URL:", dataImgURL); // Debugging step
-      console.log("type of data imageurl", typeof(dataImgURL))
+      // console.log("Image URL:", dataImgURL); // Debugging step
+      // console.log("type of data imageurl", typeof(dataImgURL))
       setImageURL(dataImgURL); // Update state with the returned URL
-      console.log("Image URL:", dataImgURL); // Debugging step
+      // console.log("Image URL:", dataImgURL); // Debugging step
       // if(data.imageURL){
       // }
       setInputText("");

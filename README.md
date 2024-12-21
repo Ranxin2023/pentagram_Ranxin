@@ -1,11 +1,11 @@
 # Pentagram: Instagram, but with AI Images
 ## Table of Contents
-
+- [Introduction](#introduction)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup](#setup)
 - [Usage](#usage)
-- [File Structure](#file-structure)
+- [Project Structure](#Project-structure)
 - [Environment Variables](#environment-variables)
 - [API Routes](#api-routes)
 - [Acknowledgements](#acknowledgements)
@@ -45,15 +45,27 @@ cd pentagram
 ```bash
 npm install
 ```
-4. Register for Modal
-5. Run the modal code to generate modals
-6. Run the development server:
+4. Run the Modal Code to Generate Modals
+To enable image generation using the Stable Diffusion model, Modal is used to deploy the backend. Follow these steps:
+- Navigate to the Python modal directory where the Modal scripts are located:
+```sh
+cd src/app/api/python_modals
 
-```bash
-npm run dev
+```
+- Deploy the Modal application by running the following command:
+```sh
+
+modal deploy generate_modal.py
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Register the api key in modal:
+
+6. Run the development server:
+
+```sh
+npm run dev
+```
+7. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Tasks
 

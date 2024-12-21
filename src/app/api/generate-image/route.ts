@@ -17,7 +17,9 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-    const url=new URL("https://ranxinli2024--stable-diffusion-t4-model-generate.modal.run")
+    const generateURL=process.env.GENERATE_URL
+    console.log("generate URl is", generateURL)
+    const url=new URL(generateURL!)
     url.searchParams.set("prompt", text)
     // Call Modal's Image Generation API
     console.log("api key is", process.env.IMAGE_API_KEY)
